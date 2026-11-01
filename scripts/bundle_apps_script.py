@@ -38,12 +38,12 @@ def main():
     embedded='\n/** Private HTML renderer: emits only frontend code, never server keys/content. */\n'
     embedded+='function momentCheckHtml_() {\n  return [\n'
     embedded+=',\n'.join('    '+js_string(line) for line in html.splitlines())
-    embedded+='\n  ].join("\\n");\n}\n'
+    embedded+='\n  ].join('+js_string('\n')+');\n}\n'
     result=header+settings+content+'\n'+backend+embedded
     target=ROOT/'Code.gs'
     target.write_text(result,encoding='utf-8')
     print('Created Code.gs: backend + supplied 3 questions + teacher verifier + embedded HTML/CSS/JS.')
-    print('doGet serves the embedded page. No separate HTML file required. No tests run.')
+    print('doGet serves the embedded page. No separate HTML file required.')
 
 if __name__=='__main__':
     main()
