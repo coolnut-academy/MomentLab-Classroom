@@ -1,0 +1,11 @@
+.private/
+.env*
+node_modules/
+.clasp.json
+.clasprc.json
+__pycache__/
+apps-script/Secrets.gs
+apps-script/Content.gs
+/Code.gs
+KH3_DOCUMENTS_V9_3Q_3MIN/
+MomentCheck_IMPLEMENT_FROM_SCRATCH_V9_2_3Q_180s/
